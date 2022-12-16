@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>copy project</title>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<link href="/css/projectMain.css" rel="stylesheet" type="text/css">
+<!-- 폰트 및 크기 조절 css -->
+<link href="/css/main.css" rel="stylesheet" type="text/css">
+<!--  메인 질문박스 등  css -->
+</head>
+<body class="pbl-body white-body">
+	<!-- 윗 부분   -->
+	<div data-collapse="small" data-animation="default" data-duration="400"
+		data-easing="ease" data-easing2="ease" role="banner"
+		class="navbar calculator w-nav" style="display: block; opacity: 1;">
+		<div class="container no-print w-container">
+			<nav role="navigation" class="nav-menu w-nav-menu"></nav>
+			<h1 class="heading-17 dem-heading">DEMENTIA CALCULATOR</h1>
+		</div>
+	</div>
+
+	<!-- 질문 부분 -->
+	<div id="survey-container" class="app-container w-container">
+		<div class="app-container">
+			<div class="survey" tabindex="-1">			
+				<!-- [About You]사용자에 대한 내용 입력할 폼  -->
+				<div id="G0" class="group first-group">
+					<div class="group-header">
+						<div class="group-name">ABOUT YOU</div>
+					</div>
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<!--질문  -->
+								<div id="sex" class="question radio-question question--large-screen-focus-fix" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">Sex</div>
+										<span class="touchable-tooltip"> <svg class="jss9"
+												focusable="false" viewBox="0 0 24 24" color="#9999CB"
+												aria-hidden="true" role="presentation">
+													<path
+													d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path>
+												</svg>
+										</span>
+									</div>
+									<!-- 선택지  -->
+									<div class="radio-question-answer-wrapper">
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">A</div> <input type="radio"
+												class="radio-answer-option__input"> <span
+												class="choice-question-input-container__label">Male</span>
+												<div
+													class="choice-question-input-container__check-icon-container">
+													<span
+														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
+														aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">B</div> <input type="radio"
+												class="radio-answer-option__input"> <span
+												class="choice-question-input-container__label">Female</span>
+												<div
+													class="choice-question-input-container__check-icon-container">
+													<span
+														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
+														aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="age" class="question number-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">Age</div>
+									</div>
+									<div>
+										<div class="jss27 survey-input">
+											<div
+												class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+												<input aria-invalid="false"
+													class="jss54 jss39 survey-input__input jss57 jss42"
+													type="number" value="" id="age">
+											</div>
+											<div class="survey-input__suffix-text">years old</div>
+											<p class="jss61"></p>
+										</div>
+									</div>
+									<div class="appearing-button-wrapper visible">
+										<button class="appearing-button">Continue</button>
+										<div class="buttom-prompt">Press Enter</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--[Health Behaviours] 섹션   -->
+				<div id="G1" class="group">
+					<div class="group-header">
+						<div class="group-name">HEALTH BEHAVIOURS</div>
+					</div>
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="smokingstat" class="question radio-question"
+									tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">What is your current smoking
+											status?</div>
+									</div>
+									<div class="radio-question-answer-wrapper">
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">A</div> <input type="radio"
+												class="radio-answer-option__input"> <span
+												class="choice-question-input-container__label">Daily</span>
+												<div
+													class="choice-question-input-container__check-icon-container">
+													<span
+														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
+														aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">B</div> <input type="radio"
+												class="radio-answer-option__input"> <span
+												class="choice-question-input-container__label">Current
+													occasional smoker</span>
+												<div
+													class="choice-question-input-container__check-icon-container">
+													<span
+														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
+														aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">C</div> <input type="radio"
+												class="radio-answer-option__input"> <span
+												class="choice-question-input-container__label">Former
+													smoker (daily or occasionally)</span>
+												<div
+													class="choice-question-input-container__check-icon-container">
+													<span
+														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
+														aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">D</div> <input type="radio"
+												class="radio-answer-option__input"> <span
+												class="choice-question-input-container__label">Never
+													smoked</span>
+												<div
+													class="choice-question-input-container__check-icon-container">
+													<span
+														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
+														aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="drk" class="question number-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">How many drinks of alcohol
+											did you have in the past week?</div>
+									</div>
+									<div>
+										<div class="jss27 survey-input">
+											<div
+												class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+												<input aria-invalid="false"
+													class="jss54 jss39 survey-input__input jss57 jss42"
+													type="number" value="">
+											</div>
+											<div class="survey-input__suffix-text"></div>
+											<p class="jss61"></p>
+										</div>
+									</div>
+									<div class="appearing-button-wrapper visible">
+										<button class="appearing-button">Continue</button>
+										<div class="buttom-prompt">Press Enter</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="fv" class="question multiple-number-question"
+									tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">How many times did you have
+											each of the following in the past week?</div>
+									</div>
+									<div class="multiple-number-question__sub-questions-container">
+										<div class="sub-question-number-input">
+											<div class="jss27 survey-input">
+												<label class="jss80 jss69 survey-input__label jss74 jss77"
+													data-shrink="false"> Fruit juice:</label>
+												<div
+													class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+													<input aria-invalid="false"
+														class="jss54 jss39 survey-input__input jss57 jss42"
+														type="number" value="">
+												</div>
+												<div class="survey-input__suffix-text"></div>
+												<p class="jss61"></p>
+											</div>
+										</div>
+										<div class="sub-question-number-input">
+											<div class="jss27 survey-input">
+												<label class="jss80 jss69 survey-input__label jss74 jss77"
+													data-shrink="false">Fruit:</label>
+												<div
+													class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+													<input aria-invalid="false"
+														class="jss54 jss39 survey-input__input jss57 jss42"
+														type="number" value="">
+												</div>
+												<div class="survey-input__suffix-text"></div>
+												<p class="jss61"></p>
+											</div>
+										</div>
+										<div class="sub-question-number-input">
+											<div class="jss27 survey-input">
+												<label class="jss80 jss69 survey-input__label jss74 jss77"
+													data-shrink="false">Potatoes:</label>
+												<div
+													class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+													<input aria-invalid="false"
+														class="jss54 jss39 survey-input__input jss57 jss42"
+														type="number" value="">
+												</div>
+												<div class="survey-input__suffix-text"></div>
+												<p class="jss61"></p>
+											</div>
+										</div>
+										<div class="sub-question-number-input">
+											<div class="jss27 survey-input">
+												<label class="jss80 jss69 survey-input__label jss74 jss77"
+													data-shrink="false">Vegetables:</label>
+												<div
+													class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+													<input aria-invalid="false"
+														class="jss54 jss39 survey-input__input jss57 jss42"
+														type="number" value="">
+												</div>
+												<div class="survey-input__suffix-text"></div>
+												<p class="jss61"></p>
+											</div>
+										</div>
+									</div>
+									<div class="appearing-button-wrapper visible">
+										<button class="appearing-button">Continue</button>
+										<div class="buttom-prompt">Press Enter</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="vigact" class="question number-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">In the past week, how much
+											time did you spend doing vigorous-intensity physical activity
+											(e.g., running)?</div>
+									</div>
+									<div>
+										<div class="jss27 survey-input">
+											<div
+												class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+												<input aria-invalid="false"
+													class="jss54 jss39 survey-input__input jss57 jss42"
+													type="number" value="">
+											</div>
+											<div class="survey-input__suffix-text">hours</div>
+											<p class="jss61"></p>
+										</div>
+									</div>
+									<div class="appearing-button-wrapper visible">
+										<button class="appearing-button">Continue</button>
+										<div class="buttom-prompt">Press Enter</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="modact" class="question number-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">In the past week, how much
+											time did you spend doing moderate-intensity physical activity
+											(e.g., rollerblading) or sports that are vigorous but not
+											continuous intensity (e.g., ice hockey, soccer, basketball,
+											volleyball)?</div>
+									</div>
+									<div>
+										<div class="jss27 survey-input">
+											<div
+												class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+												<input aria-invalid="false"
+													class="jss54 jss39 survey-input__input jss57 jss42"
+													type="number" value="">
+											</div>
+											<div class="survey-input__suffix-text">hours</div>
+											<p class="jss61"></p>
+										</div>
+									</div>
+									<div class="appearing-button-wrapper visible">
+										<button class="appearing-button">Continue</button>
+										<div class="buttom-prompt">Press Enter</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="ligact" class="question number-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">In the past week, how much
+											time did you spend doing light-intensity physical activities?
+											(e.g., walking, cycling, gardening, exercise class, golfing,
+											bowling, skating, fishing, baseball, tennis)</div>
+									</div>
+									<div>
+										<div class="jss27 survey-input">
+											<div
+												class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+												<input aria-invalid="false"
+													class="jss54 jss39 survey-input__input jss57 jss42"
+													type="number" value="">
+											</div>
+											<div class="survey-input__suffix-text">hours</div>
+											<p class="jss61"></p>
+										</div>
+									</div>
+									<div class="appearing-button-wrapper visible">
+										<button class="appearing-button">Continue</button>
+										<div class="buttom-prompt">Press Enter</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- [Sociodemographic] 섹션 -->
+				<div id="G2" class="group">
+					<div class="group-header">
+						<div class="group-name">SOCIODEMOGRAPHIC</div>
+					</div>
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="edu" class="question radio-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">What is your education level?</div>
+									</div>
+									<div class="radio-question-answer-wrapper">
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">A</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Less than high school</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">B</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">High school graduate</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">C</div> 
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Some post-secondary education</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">D</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Post-secondary graduate</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="eth" class="question radio-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">What is your cultural or racial background?</div>
+									</div>
+									<div class="radio-question-answer-wrapper">
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">A</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">White</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">B</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">South Asian, West Asian or Arab</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+											<div class="keypress-label">C</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">South East Asian, Chinese, Japanese, Korean or Filipino</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">D</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Other or multiple origin</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="immig" class="question yes-no-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">Were you born a Canadian citizen?</div>
+									</div>
+									<div class="yes-no-question-answer-wrapper answer-wrapper">
+										<div>
+											<div class="radio-answer-question">
+												<label class="choice-question-input-container">
+													<div class="keypress-label">A</div>
+													<input type="radio" class="radio-answer-option__input">
+													<span class="choice-question-input-container__label">Yes</span>
+													<div class="choice-question-input-container__check-icon-container">
+														<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+													</div>
+												</label>
+											</div>
+											<div class="radio-answer-question">
+												<label class="choice-question-input-container">
+												<div class="keypress-label">B</div>
+													<input type="radio" class="radio-answer-option__input">
+													<span class="choice-question-input-container__label">No</span>
+													<div class="choice-question-input-container__check-icon-container">
+														<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+													</div>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="ms" class="question radio-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">What is your marital status?</div>
+									</div>
+									<div class="radio-question-answer-wrapper">
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+													<div class="keypress-label">A</div>
+													<input type="radio" class="radio-answer-option__input">
+													<span class="choice-question-input-container__label">Married or living common-law</span>
+													<div class="choice-question-input-container__check-icon-container">
+														<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+													</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">B</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Widowed</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">C</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Divorced or separated</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">D</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Single, never married</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="dep" class="question radio-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">What is the level of social support and wealth in your neighbourhood compared to the rest of your country?</div>
+									</div>
+									<div class="radio-question-answer-wrapper">
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">A</div>
+													<input type="radio" class="radio-answer-option__input">
+													<span class="choice-question-input-container__label">Above average</span>
+													<div class="choice-question-input-container__check-icon-container">
+														<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"	aria-hidden="true">check</span>
+													</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">B</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Average</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">C</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Below average</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="lang" class="question yes-no-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">Do you speak more than one language?</div>
+									</div>
+									<div class="yes-no-question-answer-wrapper answer-wrapper">
+										<div>
+											<div class="radio-answer-question">
+												<label class="choice-question-input-container">
+													<div class="keypress-label">A</div>
+													<input type="radio" class="radio-answer-option__input">
+													<span class="choice-question-input-container__label">Yes</span>
+													<div class="choice-question-input-container__check-icon-container">
+														<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+													</div>
+												</label>
+											</div>
+											<div class="radio-answer-question">
+												<label class="choice-question-input-container">
+													<div class="keypress-label">B</div>
+													<input type="radio" class="radio-answer-option__input">
+													<span class="choice-question-input-container__label">No</span>
+													<div class="choice-question-input-container__check-icon-container">
+														<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+													</div>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<!--[General Health] 섹션  -->
+				<div id="G3" class="group">
+					<div class="group-header">
+						<div class="group-name">GENERAL HEALTH</div>
+					</div>
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="lbs_kgs" class="question connected-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">Weight:</div>
+									</div>
+									<div class="connected-questions__questions-and-or-container">
+										<div class="jss27 survey-input">
+											<div class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+												<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" value="">
+											</div>
+											<div class="survey-input__suffix-text">lbs</div>
+											<p class="jss61"></p>
+										</div>
+										<div class="connected-question__or-text">or</div>
+										<div class="jss27 survey-input">
+											<div class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+												<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" value="">
+											</div>
+											<div class="survey-input__suffix-text">kgs</div>
+											<p class="jss61"></p>
+										</div>
+									</div>
+									<div class="appearing-button-wrapper visible">
+										<button class="appearing-button">Continue</button>
+										<div class="buttom-prompt">Press Enter</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="cm_feetinches" class="question connected-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">Height:</div>
+									</div>
+									<div class="connected-questions__questions-and-or-container">
+										<div class="jss27 survey-input">
+											<div class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+												<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" value="">
+											</div>
+											<div class="survey-input__suffix-text">cm</div>
+											<p class="jss61"></p>
+										</div>
+										<div class="connected-question__or-text">or</div>
+										<div>
+											<div class="sub-question-number-input">
+												<div class="jss27 survey-input">
+													<label class="jss80 jss69 survey-input__label jss74 jss77" data-shrink="false">feet</label>
+													<div class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+														<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" value="">
+													</div>
+													<div class="survey-input__suffix-text">feet</div>
+													<p class="jss61"></p>
+												</div>
+											</div>
+											<div class="sub-question-number-input">
+												<div class="jss27 survey-input">
+													<label class="jss80 jss69 survey-input__label jss74 jss77" data-shrink="false">inches</label>
+													<div class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+														<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" value="">
+													</div>
+													<div class="survey-input__suffix-text">inches</div>
+													<p class="jss61"></p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="appearing-button-wrapper visible">
+										<button class="appearing-button">Continue</button>
+										<div class="buttom-prompt">Press Enter</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="cond" class="question multiple-choice-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">Which of the following conditions do you have?</div>
+									</div>
+									<div tabindex="5" class="subquestion-wrapper">
+										<label class="choice-question-input-container">
+											<div class="keypress-label">A</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">Stroke</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">B</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">Heart disease</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">C</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">Chronic obstructive pulmonary disease</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">D</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">Diabetes</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">E</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">High blood pressure</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">F</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">Depression or Anxiety</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">G</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">Epilepsy</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">H</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">None of the above</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+									</div>
+									<div class="appearing-button-wrapper visible">
+										<button class="appearing-button">Continue</button>
+										<div class="buttom-prompt">Press Enter</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="belong" class="question radio-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">How would you describe your sense of belonging to your local community?</div>
+									</div>
+									<div class="radio-question-answer-wrapper">
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">A</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Very strong</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">B</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Somewhat strong</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">C</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Somewhat weak</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+											<div class="keypress-label">D</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Very weak</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="stress" class="question radio-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">Thinking about the amount of stress in your life, would you say that most days are:</div>
+									</div>
+									<div class="radio-question-answer-wrapper">
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">A</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Not at all stressful</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">B</div> 
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Not very stressful</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">C</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">A bit stressful</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">D</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Quite a bit stressful</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">E</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Extremely stressful</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="srhealth" class="question radio-question" tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">In general, would you say your health is:</div>
+									</div>
+									<div class="radio-question-answer-wrapper">
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">A</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Excellent</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">B</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Very good</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">C</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Good</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">D</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Fair</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">E</div>
+												<input type="radio" class="radio-answer-option__input">
+												<span class="choice-question-input-container__label">Poor</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div class="question-wrapper">
+							<div tabindex="-1">
+								<div id="needhelp" class="question multiple-choice-question"
+									tabindex="-1">
+									<div class="question-and-tooltip-container">
+										<div class="question-text">Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities?</div>
+									</div>
+									<div tabindex="5" class="subquestion-wrapper">
+										<label class="choice-question-input-container">
+											<div class="keypress-label">A</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">Preparing meals</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">B</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">Getting to appointments and running errands such as shopping for groceries</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">C</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">Doing everyday housework</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">D</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">Personal care such as washing, dressing, eating or taking medications</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">E</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">Moving about inside the house</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">F</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">Looking after your personal finances such as making bank transactions or paying bills</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+										<label class="choice-question-input-container">
+											<div class="keypress-label">G</div>
+											<input type="checkbox" class="sub-question-text">
+											<span class="choice-question-input-container__label">None of the above</span>
+											<div class="choice-question-input-container__check-icon-container">
+												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+											</div>
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+								
+				
+				<!-- 밑에 설문현황 보여주는 막대기 같은거 나옴 -->
+				<div class="results" tabindex="-1"></div>
+				<div class="survey-footer no-print">
+					<div class="flex-container">
+						<div id="left-container" class="left-container">
+							<div class="survey-progress-bar">
+								<div class="groups">
+									<div class="survey-progress-bar__group-container">
+										<div class="survey-progress-bar__group-name">About You</div>
+										<div class="survey-progress-bar__group-progress-bar">
+											<div class="survey-progress-bar__group-progress-bar-progress"
+												style="width: 0%;"></div>
+										</div>
+									</div>
+									<div class="survey-progress-bar__group-container">
+										<div class="survey-progress-bar__group-name">Health
+											Behaviours</div>
+										<div class="survey-progress-bar__group-progress-bar">
+											<div class="survey-progress-bar__group-progress-bar-progress"
+												style="width: 0%;"></div>
+										</div>
+									</div>
+									<div class="survey-progress-bar__group-container">
+										<div class="survey-progress-bar__group-name">Sociodemographic</div>
+										<div class="survey-progress-bar__group-progress-bar">
+											<div class="survey-progress-bar__group-progress-bar-progress"
+												style="width: 0%;"></div>
+										</div>
+									</div>
+									<div class="survey-progress-bar__group-container">
+										<div class="survey-progress-bar__group-name">General
+											Health</div>
+										<div class="survey-progress-bar__group-progress-bar">
+											<div class="survey-progress-bar__group-progress-bar-progress"
+												style="width: 0%;"></div>
+										</div>
+									</div>
+								</div>
+								<div class="total">
+									<div class="survey-progress-bar__group-container">
+										<div class="survey-progress-bar__group-name">Progress</div>
+										<div class="survey-progress-bar__group-progress-bar">
+											<div class="survey-progress-bar__group-progress-bar-progress"
+												style="width: 0%;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="button-container">
+							<button class="btn">Previous</button>
+							<button class="btn">Next</button>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- 계산버튼  -->
+	<div class="calculate-section no-print">
+		<a href="#" id="dementia-calculate-button"
+			class="calculator-landing-begin-button demport-calculate w-button disabled"
+			onclick="aboutYouResult()">Calculate</a>
+	</div>
+
+
+	<!-- 질문 끝나고 다른 설문 할 지 보여주는 그 부분 -->
+	<div id="survey-end" class="pbl-footer demport-lav wf-section">
+		<div class="container-9 w-container">
+			<div class="survey-complete-block">
+				<h1 class="heading-22">End of Survey</h1>
+				<div class="text-block-72">Check out our other health
+					calculators!</div>
+				<div class="w-layout-grid survey-end-calcs">
+					<a href="/cardiovascular-disease" class="w-inline-block"><div
+							class="calculator-badge">
+							<div class="badge-image heart"></div>
+							<div class="badge-content">
+								<div class="calc-badge-title heart">Cardiovascular</div>
+								<div class="paragraph-secondary bold">What is my risk of
+									having a heart attack or stroke?</div>
+								<div class="badge-start heart">Start</div>
+							</div>
+						</div></a><a href="/life-expectancy" class="badge-link-block w-inline-block"><div
+							class="calculator-badge">
+							<div class="badge-image"></div>
+							<div class="badge-content">
+								<div class="calc-badge-title">Life Expectancy</div>
+								<div class="paragraph-secondary bold">
+									How long will I live?<br>‍
+								</div>
+								<div class="badge-start">Start</div>
+							</div>
+						</div></a><a href="/respect-elder-life" class="w-inline-block"><div
+							class="calculator-badge">
+							<div class="badge-image respect"></div>
+							<div class="badge-content">
+								<div class="calc-badge-title respect">RESPECT</div>
+								<div class="paragraph-secondary bold">Am I living in my
+									last years?</div>
+								<div class="badge-start respect">Start</div>
+							</div>
+						</div></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="footernav-container w-container">
+			<div class="div-block-188">
+				<img
+					src="https://assets-global.website-files.com/5a05f82b0703c2000143c96a/5a35ce897e2ca40001c06821_Group.png"
+					width="40" alt="" class="image-128">
+				<p class="paragraph-60">Subscribe to the PBL newsletter!</p>
+				<a
+					href="https://projectbiglife.us8.list-manage.com/subscribe?u=380fa63ab064b8fa568e1cd61&amp;id=22e41acde3"
+					class="submit-button-3 w-button">Subscribe</a>
+				<div class="twitter w-widget w-widget-twitter">
+					<iframe title="Twitter Follow Button" allowtransparency="true"
+						frameborder="0" scrolling="no"
+						src="//platform.twitter.com/widgets/follow_button.html#dnt=true&amp;height=20&amp;screen_name=projectbiglife&amp;show_count=false&amp;size=m&amp;width=100%25"
+						style="border: none; height: 20px; overflow: hidden; width: 100%;"></iframe>
+				</div>
+			</div>
+			<div data-collapse="none" data-animation="default"
+				data-duration="400" data-easing="ease" data-easing2="ease"
+				role="banner" class="navbar-2 w-nav">
+				<div class="footernav-container w-container">
+					<nav role="navigation" class="footerlist-column w-nav-menu">
+						<a href="/" class="main-nav-link w-nav-link"
+							style="max-width: 940px;">Home</a><a href="#"
+							class="main-nav-link w-nav-link" style="max-width: 940px;">About</a><a
+							href="/faqs" class="sec-nav-link w-nav-link"
+							style="max-width: 940px;">FAQ's</a><a href="/about-us"
+							class="sec-nav-link w-nav-link" style="max-width: 940px;">PBL
+							Team</a><a href="/acknowledgements" class="sec-nav-link w-nav-link"
+							style="max-width: 940px;">Acknowledgements</a><a href="/media"
+							class="sec-nav-link w-nav-link" style="max-width: 940px;">In
+							the News</a><a href="/contact" class="sec-nav-link w-nav-link"
+							style="max-width: 940px;">Contact</a>
+					</nav>
+					<nav role="navigation" class="footerlist-column w-nav-menu">
+						<a href="#" class="main-nav-link w-nav-link"
+							style="max-width: 940px;">Calculators</a><a
+							href="/life-expectancy" class="sec-nav-link w-nav-link"
+							style="max-width: 940px;">Life Expectancy</a><a
+							href="/cardiovascular-disease" class="sec-nav-link w-nav-link"
+							style="max-width: 940px;">Heart Attack &amp; Stroke</a><a
+							href="/dementia" class="sec-nav-link w-nav-link"
+							style="max-width: 940px;">Dementia</a><a href="/dementia"
+							class="sec-nav-link is-in-dev w-nav-link"
+							style="max-width: 940px;">Chronic Kidney Disease</a><a
+							href="/sodium/home" class="sec-nav-link w-nav-link"
+							style="max-width: 940px;">Sodium</a><a href="/respect-elder-life"
+							class="sec-nav-link w-nav-link" style="max-width: 940px;">Respect
+							Elder-life</a><a href="/planning-tool-home"
+							class="sec-nav-link w-nav-link" style="max-width: 940px;">Planning
+							Tool</a>
+					</nav>
+					<nav role="navigation" class="footerlist-column w-nav-menu">
+						<a href="#" class="main-nav-link w-nav-link"
+							style="max-width: 940px;">Science</a><a
+							href="/science-for-individuals" class="sec-nav-link w-nav-link"
+							style="max-width: 940px;">For Individuals</a><a
+							href="/algorithms" class="sec-nav-link w-nav-link"
+							style="max-width: 940px;">For Scientists</a><a href="/privacy"
+							class="main-nav-link w-nav-link" style="max-width: 940px;">Privacy</a><a
+							href="/disclaimer" class="main-nav-link w-nav-link"
+							style="max-width: 940px;">Disclaimer</a>
+					</nav>
+				</div>
+				<div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-1"></div>
+			</div>
+		</div>
+	</div>
+	<div class="landscape-cover wf-section">
+		<h4 class="heading-16">Please rotate your device to landscape.</h4>
+		<div class="text-block-73">(For desktop users, widen your window
+			to at least 768px.)</div>
+	</div>
+
+</body>
+<script>
+	(function cssFocus(){
+		const options = {
+			  root: null, // viewport
+			  rootMargin: "100px",
+			  threshold: 1.0,  // 50%가 viewport에 들어와 있어야 callback 실행
+			}
+	
+		const observer = new IntersectionObserver(entries => {
+		  entries.forEach(entry => {
+		    if (entry.isIntersecting) {//target과 root 가 교차되어 있는지 boolean 값으로 반환 
+		      entry.target.classList.add('current');
+		    } else {
+		      entry.target.classList.remove('current');
+		    }
+		  });
+		}, options);
+	
+		const boxList = document.querySelectorAll('.question-wrapper');
+	
+		// 반복문을 돌려 모든 DOM에 적용
+		boxList.forEach(el => observer.observe(el));
+	}());
+	
+	
+	
+	//클릭 했을 때, 선택박스에 check-icon-selected  클래스가 add되어야 함.
+	// 모든 choice 박스에 클릭이벤트를 인식해야함. 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	var products = document.querySelectorAll(".choice-question-input-container__check-icon-container");//이 클래스를 가지고 있는 요소 리스트 
+	
+	for (let i = 0; i < products.length; i++){
+		products[i].onclick = function(e){//모든 클래스에 onclick 이벤트를 더해준다. 
+    		document.getElementsByClassName("material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon")[i].setAttribute('class','choice-question-input-container__check-icon--selected');
+    		console.log(this);
+    		e.preventDefault();
+
+		
+//     		var spans = document.querySelectorAll('.material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon');
+//    		spans[i].className += 'choice-question-input-container__check-icon--selected';
+//     		spans[i].setAttribute('class','choice-question-input-container__check-icon--selected');
+//     		spans[i].setAttribute('visibilty','visibility');
+//     		document.getElementsByClassName("choice-question-input-container__check-icon--selected").setAttribute('visibility','');
+    		
+    	};
+    }
+	
+	
+  
+
+ 
+	
+	
+	
+</script>
+</html>
+
+
