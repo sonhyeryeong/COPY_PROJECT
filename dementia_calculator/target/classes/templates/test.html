@@ -2,42 +2,94 @@
 <html>
 <head>
 <meta charset="UTF-8">
-	<title>copy project</title>
-	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-	<link href="/css/test.css" rel="stylesheet" type="text/css">
-	<!--  메인 질문박스 등  css -->
+<title>copy project</title>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<link href="/css/test.css" rel="stylesheet" type="text/css">
+<!--  메인 질문박스 등  css -->
 </head>
 
 <script type="text/javascript">
-
+	
 </script>
 
 <body>
 	<div class="body_class">
 		<!-- 맨 위 로고 부분 (항상 떠 있어야 함)  -->
-		<div class="topbar">
-			<h1>DEMENTIA CALCULATOR</h1>
+		<div class="navbar calculator w-nav" id="topbar">
+			<div class="container no-print w-container">
+				<nav role="navigation" class="nav-menu w-nav-menu"></nav>
+				<h1>DEMENTIA CALCULATOR</h1>
+			</div>
 		</div>
 		<!-- 질문을 전부 감싸는 컨테이너  -->
 		<div id="survey-container" class="app-container w-container">
 			<div class="app-container">
-				<div class="start_of_survey" id = "aboutYou">
-				<span>ABOUT YOU</span>
-				
-					<div class="question_text"></div>
-					<div class="survey age"></div>
+				<div class="survey" tabindex="-1">
+					<!-- [About You]사용자에 대한 내용 입력할 폼  -->
+					<div class="start_of_survey" id="aboutYou">
+						<div class="group-header">
+							<div class="group-name">ABOUT YOU</div>
+						</div>
+						<div>
+							<!-- 질문 하나를 감싸는 클래스 -->
+							<div class="question-wrapper">
+								<div id="sex" class="question">
+									<div class="question-tooltip">
+										<div class="question_text">Sex</div>
+										<span class="touchable-tooltip"> <!-- 마우스 오버하면 설명이 나오게 함. 아이콘  -->
+											<!-- 									<svg class="jss9" focusable="false" viewBox="0 0 24 24" color="#9999CB" aria-hidden="true" role="presentation"> -->
+											<!-- 										<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path> -->
+											<!-- 									</svg> -->
+										</span>
+									</div>
+									<div class="radio-question-answer-wrapper">
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">A</div> <input type="radio"
+												class="radio-answer-option__input"> <span
+												class="choice-question-input-container__label">Male</span>
+												<div
+													class="choice-question-input-container__check-icon-container">
+													<span
+														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
+														aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+										<div class="radio-answer-question">
+											<label class="choice-question-input-container">
+												<div class="keypress-label">B</div> <input type="radio"
+												class="radio-answer-option__input"> <span
+												class="choice-question-input-container__label">Female</span>
+												<div
+													class="choice-question-input-container__check-icon-container">
+													<span
+														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
+														aria-hidden="true">check</span>
+												</div>
+											</label>
+										</div>
+
+
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="question_text"></div>
+						<div class="survey age"></div>
+					</div>
+					<div class="end_of_survey"></div>
 				</div>
-				<div class="end_of_survey"></div>
-				
 			</div>
-		
-		
-		
+
+
+
 		</div>
-		
-		<div class="footer">
-		</div>
-			
+
+		<div class="footer"></div>
+
 	</div>
 
 

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>copy project</title>
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <link href="/css/projectMain.css" rel="stylesheet" type="text/css">
 <!-- 폰트 및 크기 조절 css -->
 <link href="/css/main.css" rel="stylesheet" type="text/css">
 <!--  메인 질문박스 등  css -->
+<link href="/css/projectMain.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/all.min.css" integrity="sha512-6c4nX2tn5KbzeBJo9Ywpa0Gkt+mzCzJBrE1RB6fmpcsoN+b/w/euwIMuQKNyUoU/nToKN3a8SgNOtPrbW12fug==" crossorigin="anonymous" />
 </head>
 <body class="pbl-body white-body">
 	<!-- 윗 부분   -->
@@ -30,46 +32,41 @@
 						<div class="group-name">ABOUT YOU</div>
 					</div>
 					<div>
-						<div class="question-wrapper">
+						<div class="question-wrapper" id="div1">
 							<div tabindex="-1">
 								<!--질문  -->
 								<div id="sex" class="question radio-question question--large-screen-focus-fix" tabindex="-1">
 									<div class="question-and-tooltip-container">
 										<div class="question-text">Sex</div>
-										<span class="touchable-tooltip"> <svg class="jss9"
-												focusable="false" viewBox="0 0 24 24" color="#9999CB"
-												aria-hidden="true" role="presentation">
-													<path
-													d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path>
+										<span class="touchable-tooltip"> 
+											<span>
+												<svg class="jss9" focusable="false" viewBox="0 0 24 24" color="#9999CB" aria-hidden="true" role="presentation">
+													<title>선택 시 유의사항</title>
+													<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path>
 												</svg>
+											</span>
 										</span>
 									</div>
 									<!-- 선택지  -->
 									<div class="radio-question-answer-wrapper">
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">A</div> <input type="radio"
-												class="radio-answer-option__input"> <span
-												class="choice-question-input-container__label">Male</span>
-												<div
-													class="choice-question-input-container__check-icon-container">
-													<span
-														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
-														aria-hidden="true">check</span>
+											<label class="choice-question-input-container" id="maleLabel" onclick="checkedIcon(this,'1')">
+												<div class="keypress-label">A</div> 
+												<input type="radio" class="radio-answer-option__input" name="sex" > 
+												<span class="choice-question-input-container__label">Male</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
 												</div>
 											</label>
 										</div>
 
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">B</div> <input type="radio"
-												class="radio-answer-option__input"> <span
-												class="choice-question-input-container__label">Female</span>
-												<div
-													class="choice-question-input-container__check-icon-container">
-													<span
-														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
-														aria-hidden="true">check</span>
+											<label class="choice-question-input-container" id="femaleLabel" onclick="checkedIcon(this,'1')">
+												<div class="keypress-label">B</div> 
+												<input type="radio" class="radio-answer-option__input" name="sex"> 
+												<span class="choice-question-input-container__label">Female</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
 												</div>
 											</label>
 										</div>
@@ -80,7 +77,7 @@
 					</div>
 
 					<div>
-						<div class="question-wrapper">
+						<div class="question-wrapper" id="div2">
 							<div tabindex="-1">
 								<div id="age" class="question number-question" tabindex="-1">
 									<div class="question-and-tooltip-container">
@@ -88,18 +85,15 @@
 									</div>
 									<div>
 										<div class="jss27 survey-input">
-											<div
-												class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
-												<input aria-invalid="false"
-													class="jss54 jss39 survey-input__input jss57 jss42"
-													type="number" value="" id="age">
+											<div class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+												<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" id="inputAge" >
 											</div>
 											<div class="survey-input__suffix-text">years old</div>
-											<p class="jss61"></p>
+											<p class="jss61" id="ageErrorText"></p>
 										</div>
 									</div>
 									<div class="appearing-button-wrapper visible">
-										<button class="appearing-button">Continue</button>
+										<button class="appearing-button" onclick="checkedAge()">Continue</button>
 										<div class="buttom-prompt">Press Enter</div>
 									</div>
 								</div>
@@ -114,67 +108,49 @@
 						<div class="group-name">HEALTH BEHAVIOURS</div>
 					</div>
 					<div>
-						<div class="question-wrapper">
+						<div class="question-wrapper" id="div3">
 							<div tabindex="-1">
-								<div id="smokingstat" class="question radio-question"
-									tabindex="-1">
+								<div id="smokingstat" class="question radio-question" tabindex="-1">
 									<div class="question-and-tooltip-container">
-										<div class="question-text">What is your current smoking
-											status?</div>
+										<div class="question-text">What is your current smoking status?</div>
 									</div>
 									<div class="radio-question-answer-wrapper">
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">A</div> <input type="radio"
-												class="radio-answer-option__input"> <span
-												class="choice-question-input-container__label">Daily</span>
-												<div
-													class="choice-question-input-container__check-icon-container">
-													<span
-														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
-														aria-hidden="true">check</span>
+											<label class="choice-question-input-container" onclick="checkedIcon(this,'3')">
+												<div class="keypress-label">A</div> <input type="radio" class="radio-answer-option__input"> 
+												<span class="choice-question-input-container__label">Daily</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
 												</div>
 											</label>
 										</div>
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">B</div> <input type="radio"
-												class="radio-answer-option__input"> <span
-												class="choice-question-input-container__label">Current
-													occasional smoker</span>
-												<div
-													class="choice-question-input-container__check-icon-container">
-													<span
-														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
-														aria-hidden="true">check</span>
+											<label class="choice-question-input-container" onclick="checkedIcon(this,'3')">
+												<div class="keypress-label">B</div> 
+												<input type="radio" class="radio-answer-option__input"> 
+												<span class="choice-question-input-container__label">Current occasional smoker</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
 												</div>
 											</label>
 										</div>
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">C</div> <input type="radio"
-												class="radio-answer-option__input"> <span
-												class="choice-question-input-container__label">Former
-													smoker (daily or occasionally)</span>
-												<div
-													class="choice-question-input-container__check-icon-container">
-													<span
-														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
-														aria-hidden="true">check</span>
+											<label class="choice-question-input-container" onclick="checkedIcon(this,'3')">
+												<div class="keypress-label">C</div> 
+												<input type="radio" class="radio-answer-option__input"> 
+												<span class="choice-question-input-container__label">Former smoker (daily or occasionally)</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
 												</div>
 											</label>
 										</div>
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">D</div> <input type="radio"
-												class="radio-answer-option__input"> <span
-												class="choice-question-input-container__label">Never
-													smoked</span>
-												<div
-													class="choice-question-input-container__check-icon-container">
-													<span
-														class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"
-														aria-hidden="true">check</span>
+											<label class="choice-question-input-container" onclick="checkedIcon(this,'3')">
+												<div class="keypress-label">D</div> 
+												<input type="radio" class="radio-answer-option__input"> 
+												<span class="choice-question-input-container__label">Never smoked</span>
+												<div class="choice-question-input-container__check-icon-container">
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
 												</div>
 											</label>
 										</div>
@@ -185,20 +161,16 @@
 					</div>
 
 					<div>
-						<div class="question-wrapper">
+						<div class="question-wrapper" id="div4">
 							<div tabindex="-1">
 								<div id="drk" class="question number-question" tabindex="-1">
 									<div class="question-and-tooltip-container">
-										<div class="question-text">How many drinks of alcohol
-											did you have in the past week?</div>
+										<div class="question-text">How many drinks of alcohol did you have in the past week?</div>
 									</div>
 									<div>
 										<div class="jss27 survey-input">
-											<div
-												class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
-												<input aria-invalid="false"
-													class="jss54 jss39 survey-input__input jss57 jss42"
-													type="number" value="">
+											<div class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+												<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" value="">
 											</div>
 											<div class="survey-input__suffix-text"></div>
 											<p class="jss61"></p>
@@ -214,24 +186,18 @@
 					</div>
 
 					<div>
-						<div class="question-wrapper">
+						<div class="question-wrapper" id="div5">
 							<div tabindex="-1">
-								<div id="fv" class="question multiple-number-question"
-									tabindex="-1">
+								<div id="fv" class="question multiple-number-question" tabindex="-1">
 									<div class="question-and-tooltip-container">
-										<div class="question-text">How many times did you have
-											each of the following in the past week?</div>
+										<div class="question-text">How many times did you have each of the following in the past week?</div>
 									</div>
 									<div class="multiple-number-question__sub-questions-container">
 										<div class="sub-question-number-input">
 											<div class="jss27 survey-input">
-												<label class="jss80 jss69 survey-input__label jss74 jss77"
-													data-shrink="false"> Fruit juice:</label>
-												<div
-													class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
-													<input aria-invalid="false"
-														class="jss54 jss39 survey-input__input jss57 jss42"
-														type="number" value="">
+												<label class="jss80 jss69 survey-input__label jss74 jss77" data-shrink="false"> Fruit juice:</label>
+												<div class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+													<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" value="">
 												</div>
 												<div class="survey-input__suffix-text"></div>
 												<p class="jss61"></p>
@@ -239,13 +205,9 @@
 										</div>
 										<div class="sub-question-number-input">
 											<div class="jss27 survey-input">
-												<label class="jss80 jss69 survey-input__label jss74 jss77"
-													data-shrink="false">Fruit:</label>
-												<div
-													class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
-													<input aria-invalid="false"
-														class="jss54 jss39 survey-input__input jss57 jss42"
-														type="number" value="">
+												<label class="jss80 jss69 survey-input__label jss74 jss77" data-shrink="false">Fruit:</label>
+												<div class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+													<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" value="">
 												</div>
 												<div class="survey-input__suffix-text"></div>
 												<p class="jss61"></p>
@@ -253,13 +215,9 @@
 										</div>
 										<div class="sub-question-number-input">
 											<div class="jss27 survey-input">
-												<label class="jss80 jss69 survey-input__label jss74 jss77"
-													data-shrink="false">Potatoes:</label>
-												<div
-													class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
-													<input aria-invalid="false"
-														class="jss54 jss39 survey-input__input jss57 jss42"
-														type="number" value="">
+												<label class="jss80 jss69 survey-input__label jss74 jss77" data-shrink="false">Potatoes:</label>
+												<div class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+													<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" value="">
 												</div>
 												<div class="survey-input__suffix-text"></div>
 												<p class="jss61"></p>
@@ -267,110 +225,13 @@
 										</div>
 										<div class="sub-question-number-input">
 											<div class="jss27 survey-input">
-												<label class="jss80 jss69 survey-input__label jss74 jss77"
-													data-shrink="false">Vegetables:</label>
-												<div
-													class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
-													<input aria-invalid="false"
-														class="jss54 jss39 survey-input__input jss57 jss42"
-														type="number" value="">
+												<label class="jss80 jss69 survey-input__label jss74 jss77" data-shrink="false">Vegetables:</label>
+												<div class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
+													<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" value="">
 												</div>
 												<div class="survey-input__suffix-text"></div>
 												<p class="jss61"></p>
 											</div>
-										</div>
-									</div>
-									<div class="appearing-button-wrapper visible">
-										<button class="appearing-button">Continue</button>
-										<div class="buttom-prompt">Press Enter</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div>
-						<div class="question-wrapper">
-							<div tabindex="-1">
-								<div id="vigact" class="question number-question" tabindex="-1">
-									<div class="question-and-tooltip-container">
-										<div class="question-text">In the past week, how much
-											time did you spend doing vigorous-intensity physical activity
-											(e.g., running)?</div>
-									</div>
-									<div>
-										<div class="jss27 survey-input">
-											<div
-												class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
-												<input aria-invalid="false"
-													class="jss54 jss39 survey-input__input jss57 jss42"
-													type="number" value="">
-											</div>
-											<div class="survey-input__suffix-text">hours</div>
-											<p class="jss61"></p>
-										</div>
-									</div>
-									<div class="appearing-button-wrapper visible">
-										<button class="appearing-button">Continue</button>
-										<div class="buttom-prompt">Press Enter</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div>
-						<div class="question-wrapper">
-							<div tabindex="-1">
-								<div id="modact" class="question number-question" tabindex="-1">
-									<div class="question-and-tooltip-container">
-										<div class="question-text">In the past week, how much
-											time did you spend doing moderate-intensity physical activity
-											(e.g., rollerblading) or sports that are vigorous but not
-											continuous intensity (e.g., ice hockey, soccer, basketball,
-											volleyball)?</div>
-									</div>
-									<div>
-										<div class="jss27 survey-input">
-											<div
-												class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
-												<input aria-invalid="false"
-													class="jss54 jss39 survey-input__input jss57 jss42"
-													type="number" value="">
-											</div>
-											<div class="survey-input__suffix-text">hours</div>
-											<p class="jss61"></p>
-										</div>
-									</div>
-									<div class="appearing-button-wrapper visible">
-										<button class="appearing-button">Continue</button>
-										<div class="buttom-prompt">Press Enter</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div>
-						<div class="question-wrapper">
-							<div tabindex="-1">
-								<div id="ligact" class="question number-question" tabindex="-1">
-									<div class="question-and-tooltip-container">
-										<div class="question-text">In the past week, how much
-											time did you spend doing light-intensity physical activities?
-											(e.g., walking, cycling, gardening, exercise class, golfing,
-											bowling, skating, fishing, baseball, tennis)</div>
-									</div>
-									<div>
-										<div class="jss27 survey-input">
-											<div
-												class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
-												<input aria-invalid="false"
-													class="jss54 jss39 survey-input__input jss57 jss42"
-													type="number" value="">
-											</div>
-											<div class="survey-input__suffix-text">hours</div>
-											<p class="jss61"></p>
 										</div>
 									</div>
 									<div class="appearing-button-wrapper visible">
@@ -382,6 +243,8 @@
 						</div>
 					</div>
 				</div>
+
+
 
 				<!-- [Sociodemographic] 섹션 -->
 				<div id="G2" class="group">
@@ -494,177 +357,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
-					
-					<div>
-						<div class="question-wrapper">
-							<div tabindex="-1">
-								<div id="immig" class="question yes-no-question" tabindex="-1">
-									<div class="question-and-tooltip-container">
-										<div class="question-text">Were you born a Canadian citizen?</div>
-									</div>
-									<div class="yes-no-question-answer-wrapper answer-wrapper">
-										<div>
-											<div class="radio-answer-question">
-												<label class="choice-question-input-container">
-													<div class="keypress-label">A</div>
-													<input type="radio" class="radio-answer-option__input">
-													<span class="choice-question-input-container__label">Yes</span>
-													<div class="choice-question-input-container__check-icon-container">
-														<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-													</div>
-												</label>
-											</div>
-											<div class="radio-answer-question">
-												<label class="choice-question-input-container">
-												<div class="keypress-label">B</div>
-													<input type="radio" class="radio-answer-option__input">
-													<span class="choice-question-input-container__label">No</span>
-													<div class="choice-question-input-container__check-icon-container">
-														<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-													</div>
-												</label>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div>
-						<div class="question-wrapper">
-							<div tabindex="-1">
-								<div id="ms" class="question radio-question" tabindex="-1">
-									<div class="question-and-tooltip-container">
-										<div class="question-text">What is your marital status?</div>
-									</div>
-									<div class="radio-question-answer-wrapper">
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-													<div class="keypress-label">A</div>
-													<input type="radio" class="radio-answer-option__input">
-													<span class="choice-question-input-container__label">Married or living common-law</span>
-													<div class="choice-question-input-container__check-icon-container">
-														<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-													</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">B</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Widowed</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">C</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Divorced or separated</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">D</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Single, never married</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div>
-						<div class="question-wrapper">
-							<div tabindex="-1">
-								<div id="dep" class="question radio-question" tabindex="-1">
-									<div class="question-and-tooltip-container">
-										<div class="question-text">What is the level of social support and wealth in your neighbourhood compared to the rest of your country?</div>
-									</div>
-									<div class="radio-question-answer-wrapper">
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">A</div>
-													<input type="radio" class="radio-answer-option__input">
-													<span class="choice-question-input-container__label">Above average</span>
-													<div class="choice-question-input-container__check-icon-container">
-														<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon"	aria-hidden="true">check</span>
-													</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">B</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Average</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">C</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Below average</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div>
-						<div class="question-wrapper">
-							<div tabindex="-1">
-								<div id="lang" class="question yes-no-question" tabindex="-1">
-									<div class="question-and-tooltip-container">
-										<div class="question-text">Do you speak more than one language?</div>
-									</div>
-									<div class="yes-no-question-answer-wrapper answer-wrapper">
-										<div>
-											<div class="radio-answer-question">
-												<label class="choice-question-input-container">
-													<div class="keypress-label">A</div>
-													<input type="radio" class="radio-answer-option__input">
-													<span class="choice-question-input-container__label">Yes</span>
-													<div class="choice-question-input-container__check-icon-container">
-														<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-													</div>
-												</label>
-											</div>
-											<div class="radio-answer-question">
-												<label class="choice-question-input-container">
-													<div class="keypress-label">B</div>
-													<input type="radio" class="radio-answer-option__input">
-													<span class="choice-question-input-container__label">No</span>
-													<div class="choice-question-input-container__check-icon-container">
-														<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-													</div>
-												</label>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					</div>					
 				</div>
 				
 				<!--[General Health] 섹션  -->
@@ -752,341 +445,9 @@
 							</div>
 						</div>
 					</div>
-					
-					<div>
-						<div class="question-wrapper">
-							<div tabindex="-1">
-								<div id="cond" class="question multiple-choice-question" tabindex="-1">
-									<div class="question-and-tooltip-container">
-										<div class="question-text">Which of the following conditions do you have?</div>
-									</div>
-									<div tabindex="5" class="subquestion-wrapper">
-										<label class="choice-question-input-container">
-											<div class="keypress-label">A</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">Stroke</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">B</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">Heart disease</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">C</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">Chronic obstructive pulmonary disease</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">D</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">Diabetes</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">E</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">High blood pressure</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">F</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">Depression or Anxiety</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">G</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">Epilepsy</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">H</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">None of the above</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-									</div>
-									<div class="appearing-button-wrapper visible">
-										<button class="appearing-button">Continue</button>
-										<div class="buttom-prompt">Press Enter</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div>
-						<div class="question-wrapper">
-							<div tabindex="-1">
-								<div id="belong" class="question radio-question" tabindex="-1">
-									<div class="question-and-tooltip-container">
-										<div class="question-text">How would you describe your sense of belonging to your local community?</div>
-									</div>
-									<div class="radio-question-answer-wrapper">
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">A</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Very strong</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">B</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Somewhat strong</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">C</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Somewhat weak</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-											<div class="keypress-label">D</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Very weak</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div>
-						<div class="question-wrapper">
-							<div tabindex="-1">
-								<div id="stress" class="question radio-question" tabindex="-1">
-									<div class="question-and-tooltip-container">
-										<div class="question-text">Thinking about the amount of stress in your life, would you say that most days are:</div>
-									</div>
-									<div class="radio-question-answer-wrapper">
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">A</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Not at all stressful</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">B</div> 
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Not very stressful</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">C</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">A bit stressful</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">D</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Quite a bit stressful</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">E</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Extremely stressful</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div>
-						<div class="question-wrapper">
-							<div tabindex="-1">
-								<div id="srhealth" class="question radio-question" tabindex="-1">
-									<div class="question-and-tooltip-container">
-										<div class="question-text">In general, would you say your health is:</div>
-									</div>
-									<div class="radio-question-answer-wrapper">
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">A</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Excellent</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">B</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Very good</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">C</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Good</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">D</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Fair</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
-												<div class="keypress-label">E</div>
-												<input type="radio" class="radio-answer-option__input">
-												<span class="choice-question-input-container__label">Poor</span>
-												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-												</div>
-											</label>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-					<div>
-						<div class="question-wrapper">
-							<div tabindex="-1">
-								<div id="needhelp" class="question multiple-choice-question"
-									tabindex="-1">
-									<div class="question-and-tooltip-container">
-										<div class="question-text">Because of any physical condition, mental condition or health problem, do you need the help of another person for any of the following activities?</div>
-									</div>
-									<div tabindex="5" class="subquestion-wrapper">
-										<label class="choice-question-input-container">
-											<div class="keypress-label">A</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">Preparing meals</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">B</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">Getting to appointments and running errands such as shopping for groceries</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">C</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">Doing everyday housework</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">D</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">Personal care such as washing, dressing, eating or taking medications</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">E</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">Moving about inside the house</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">F</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">Looking after your personal finances such as making bank transactions or paying bills</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-										<label class="choice-question-input-container">
-											<div class="keypress-label">G</div>
-											<input type="checkbox" class="sub-question-text">
-											<span class="choice-question-input-container__label">None of the above</span>
-											<div class="choice-question-input-container__check-icon-container">
-												<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
-											</div>
-										</label>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+										
+
+				
 				</div>
 								
 				
@@ -1268,6 +629,8 @@
 			</div>
 		</div>
 	</div>
+	
+	
 	<div class="landscape-cover wf-section">
 		<h4 class="heading-16">Please rotate your device to landscape.</h4>
 		<div class="text-block-73">(For desktop users, widen your window
@@ -1276,6 +639,7 @@
 
 </body>
 <script>
+	//스크롤 인식 활성화
 	(function cssFocus(){
 		const options = {
 			  root: null, // viewport
@@ -1292,49 +656,65 @@
 		    }
 		  });
 		}, options);
-	
 		const boxList = document.querySelectorAll('.question-wrapper');
-	
 		// 반복문을 돌려 모든 DOM에 적용
 		boxList.forEach(el => observer.observe(el));
 	}());
 	
-	
-	
-	//클릭 했을 때, 선택박스에 check-icon-selected  클래스가 add되어야 함.
-	// 모든 choice 박스에 클릭이벤트를 인식해야함. 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	var products = document.querySelectorAll(".choice-question-input-container__check-icon-container");//이 클래스를 가지고 있는 요소 리스트 
-	
-	for (let i = 0; i < products.length; i++){
-		products[i].onclick = function(e){//모든 클래스에 onclick 이벤트를 더해준다. 
-    		document.getElementsByClassName("material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon")[i].setAttribute('class','choice-question-input-container__check-icon--selected');
-    		console.log(this);
-    		e.preventDefault();
-
-		
-//     		var spans = document.querySelectorAll('.material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon');
-//    		spans[i].className += 'choice-question-input-container__check-icon--selected';
-//     		spans[i].setAttribute('class','choice-question-input-container__check-icon--selected');
-//     		spans[i].setAttribute('visibilty','visibility');
-//     		document.getElementsByClassName("choice-question-input-container__check-icon--selected").setAttribute('visibility','');
-    		
-    	};
+	// 다음 섹션으로 위치 이동 
+	// 라디오 버튼의 경우 -> 선택 하면 넘어가야함 / 입력창의 경우 -> 입력 후, 엔터 혹은 클릭하면 다음 섹션으로 간다
+	function fnMove(seq){
+		let num = Number(seq)+1;
+        var offset = $("#div" + num).offset();//document안에 다음 섹션의 위치값을 반환
+        $('html, body').animate({scrollTop : offset.top}, 400);
     }
+		
+	//클릭 시 라벨의 배경색 변경 & check-icon
+	//다음 섹션으로 이동(fnMove메소드)
+	function checkedIcon(element,number){ 
+		for(let i=0; i<$("#div"+number).find('.radio-answer-question').length; i++){
+			$("#div"+number).find('.radio-answer-question').find('label')[i].className='choice-question-input-container';
+			$("#div"+number).find('.radio-answer-question').find('label').find('.material-icons')[i].className='material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon';
+		}
+		element.classList.add('choice-question-input-container--selected');//라벨의 배경색 변경
+		element.getElementsByClassName('material-icons')[0].classList.add('choice-question-input-container__check-icon--selected');
+		fnMove(number);
+	}
+	
+	//입력값을 실시간으로 감지하여 에러메세지를 띄워야 함 
+	// 입력값이 기준치에 도달하지 않으면 넘어갈 수 없도록 막아야함. 
+	$('#inputAge').keyup(function(){
+		var age =$(this).val();
+		$(this).val(age.replace(/[^0-9]/));
+		$('#ageErrorText').text('');
+		if(age>100){
+			$('#ageErrorText').text('100살까지만 가능합니다.');
+		}else if (age<55){
+			$('#ageErrorText').text('55살 이상만 입력 가능합니다.');
+		}
+	});
+	//입력값 체크해서 넘어갈 수 있도록 하기. 
+	function checkedAge(){
+		if($('#inputAge').val()>100 || $('#inputAge').val()<55){
+			$('#inputAge').focus();
+		}else{
+			fnMove(2);
+		}
+	}
+	
+	//엔터키 인식해서 함수 실행하기...
+	$('#div2').keypress(function(e){
+		if(e.keyCode===13){
+			checkedAge();
+		}
+	});
+	
+	
 	
 	
   
 
  
-	
 	
 	
 </script>
