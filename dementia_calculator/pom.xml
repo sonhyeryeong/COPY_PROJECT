@@ -47,6 +47,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency><!-- default 넣어줄려고 사용하는 타임리프레이아웃-->
+	    	<groupId>nz.net.ultraq.thymeleaf</groupId>
+	    	<artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

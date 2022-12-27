@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html xmlns:th="httpl://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/default}">
+<div layout:fragment="content">
+	<!-- 질문을 전부 감싸는 컨테이너  -->
+	<div id="survey-container" class="app-container w-container">
+		<div class="app-container">
+			<div class="survey w-container" tabindex="-1">
+				<div id="aboutYou" class="group first-group">
+					<!-- [About You]사용자에 대한 내용 입력할 폼  -->
+					<div>
+						<div class="group-header">
+							<div class="group-name">ABOUT YOU</div>
+						</div>
+						<!-- 질문 하나를 감싸는 클래스 -->
+						<div class="question-wrapper" id="divSex">
+							<div id="sex" class="question">
+								<div class="question-and-tooltip-container">
+									<span class="touchable-tooltip">
+										<div class="question_text">Sex</div> <i class="fa-solid fa-circle-question" title="성별 선택 시 유의사항" style="color: rgb(153, 153, 203); font-size: 20px;"></i>
+									</span>
+								</div>
+								<!--선택지를 감싸는 div 하나 : radio-question-answer-wrapper -->
+								<div class="radio-question-answer-wrapper">
+									<label class="choice-question-input-container" id="lblSex" onclick="checkedIcon(this, 'Sex');"> 
+										<span class="choice-question-input-container__label" value="male">Male</span>
+										<div class="choice-question-input-container__check-icon-container">
+											<span class="fas fa-check fa-lg choice-question-input-container__check-icon" id="spanSex" aria-hidden="true" />
+										</div>
+									</label> 
+									<label class="choice-question-input-container" id="lblSex" onclick="checkedIcon(this, 'Sex');"> 
+										<span class="choice-question-input-container__label" value="female">Female</span>
+										<div class="choice-question-input-container__check-icon-container">
+											<span class="fas fa-check fa-lg choice-question-input-container__check-icon" id="spanSex" aria-hidden="true" />
+										</div>
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="question-wrapper" id="divAge">
+							<div id="age" class="question number-question" tabindex="-1">
+								<div class="question-and-tooltip-container">
+									<div class="question-text">Age</div>
+								</div>
+								<div>
+									<div class="survey-input">
+										<div class="survey-input__input-underline">
+											<input aria-invalid="false" class="survey-input__input" type="number" id="inputAge">
+										</div>
+										<div class="survey-input__suffix-text">years old</div>
+										<p id="ageErrorText"></p>
+									</div>
+								</div>
+								<div class="appearing-button-wrapper visible">
+									<button class="appearing-button" onclick="checkedAge()">Continue</button>
+									<div class="buttom-prompt">Press Enter</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="healthBehaviours" class="group">
+					<!--[Health Behaviours] 섹션   -->
+					<div class="group-header">
+						<div class="group-name">HEALTH BEHAVIOURS</div>
+					</div>
+
+					<div class="question-wrapper" id="divSmoking">
+						<div id="smoking" class="question">
+							<div class="question-text">What is your current smoking status?</div>
+							<!--선택지를 감싸는 div 하나 : radio-question-answer-wrapper -->
+							<div class="radio-question-answer-wrapper">
+								<label class="choice-question-input-container" id="lblSmoking" onclick="checkedIcon1(this, 'Smoking','AvgSmoke');"> 
+									<span class="choice-question-input-container__label">Daily</span>
+									<div class="choice-question-input-container__check-icon-container">
+										<span class="fas fa-check fa-lg choice-question-input-container__check-icon" id="spanSmoking" aria-hidden="true" />
+									</div>
+								</label> 
+								<label class="choice-question-input-container" id="lblSmoking" onclick="checkedIcon1(this, 'Smoking','SmokingPast');"> 
+									<span class="choice-question-input-container__label">Current occasional smoker</span>
+									<div class="choice-question-input-container__check-icon-container">
+										<span class="fas fa-check fa-lg choice-question-input-container__check-icon" id="spanSmoking" aria-hidden="true" />
+									</div>
+								</label> 
+								<label class="choice-question-input-container" id="lblSmoking" onclick="checkedIcon1(this, 'Smoking','SmokingPastDaily');"> 
+									<span class="choice-question-input-container__label">Former smoker (daily or occasionally)</span>
+									<div class="choice-question-input-container__check-icon-container">
+										<span class="fas fa-check fa-lg choice-question-input-container__check-icon" id="spanSmoking" aria-hidden="true" />
+									</div>
+								</label> 
+								<label class="choice-question-input-container" id="lblSmoking" onclick="checkedIcon1(this, 'Smoking','Drink');"> 
+									<span class="choice-question-input-container__label">Never smoked</span>
+									<div class="choice-question-input-container__check-icon-container">
+										<span class="fas fa-check fa-lg choice-question-input-container__check-icon" id="spanSmoking" aria-hidden="true" />
+									</div>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- daily 선택 시 나옴.  -->
+					<div class="question-wrapper" id="divAvgSmoke">
+						<div id="drink" class="question number-question" tabindex="-1">
+							<div class="question-text">On average, how many cigarettes do you smoke per day?</div>
+							<div>
+								<div class="survey-input">
+									<div class="survey-input__input-underline">
+										<input aria-invalid="false" class="survey-input__input" type="number" id="inputAvgSmoke">
+									</div>
+									<p id="avgSmokeErrorText"></p>
+								</div>
+							</div>
+							<div class="appearing-button-wrapper visible">
+								<button class="appearing-button" onclick="">Continue</button>
+								<div class="buttom-prompt">Press Enter</div>
+							</div>
+						</div>
+					</div>
+					<!-- Current occasional smoker 선택 시 나오는 질문-->
+					<div class="question-wrapper" id="divSmokingPast">
+						<div id="smokingPast" class="question">
+							<div class="question-text">Have you smoked daily in the past?</div>
+							<div class="radio-question-answer-wrapper">
+								<label class="choice-question-input-container" id="lblSmokingPast" onclick="checkedIcon(this, 'SmokingPast');"> 
+									<span class="choice-question-input-container__label">Yes</span>
+									<div class="choice-question-input-container__check-icon-container">
+										<span class="fas fa-check fa-lg choice-question-input-container__check-icon" id="spanSmokingPast" aria-hidden="true" />
+									</div>
+								</label> 
+								<label class="choice-question-input-container" id="lblSmokingPast" onclick="checkedIcon(this, 'SmokingPast');"> 
+									<span class="choice-question-input-container__label">No</span>
+									<div class="choice-question-input-container__check-icon-container">
+										<span class="fas fa-check fa-lg choice-question-input-container__check-icon" id="spanSmokingPast" aria-hidden="true" />
+									</div>
+								</label> 
+							</div>
+						</div>
+					</div>
+					<!-- former smoker 선택 시 나오는 질문-->
+					<div class="question-wrapper" id="divSmokingPastDaily">
+						<div id="smokingPast" class="question">
+							<div class="question-text">In the past, did you smoke daily?</div>
+							<div class="radio-question-answer-wrapper">
+								<label class="choice-question-input-container" id="lblSmokingPastDaily" onclick="checkedIcon(this, 'SmokingPastDaily');"> 
+									<span class="choice-question-input-container__label">Daily</span>
+									<div class="choice-question-input-container__check-icon-container">
+										<span class="fas fa-check fa-lg choice-question-input-container__check-icon" id="spanSmokingPastDaily" aria-hidden="true" />
+									</div>
+								</label> 
+								<label class="choice-question-input-container" id="lblSmokingPastDaily" onclick="checkedIcon(this, 'SmokingPastDaily');"> 
+									<span class="choice-question-input-container__label">Less than daily</span>
+									<div class="choice-question-input-container__check-icon-container">
+										<span class="fas fa-check fa-lg choice-question-input-container__check-icon" id="spanSmokingPastDaily" aria-hidden="true" />
+									</div>
+								</label> 
+							</div>
+						</div>
+					</div>
+					<!-- neversmoked 선택 시 나옴.  -->
+					<div class="question-wrapper" id="divDrink">
+						<div id="drink" class="question number-question" tabindex="-1">
+							<div class="question-text">How many drinks of alcohol did you have in the past week?</div>
+							<div>
+								<div class="survey-input">
+									<div class="survey-input__input-underline">
+										<input aria-invalid="false" class="survey-input__input" type="number" id="inputDrink">
+									</div>
+									<p id="drinkErrorText"></p>
+								</div>
+							</div>
+							<div class="appearing-button-wrapper visible">
+								<button class="appearing-button" onclick="">Continue</button>
+								<div class="buttom-prompt">Press Enter</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				
+				
+			</div>
+		</div>
+	</div>
+	<script th:line="javascript">
+		const ORDER = ['Sex', 'Age','Smoking','SmokingPast', 'Drink' ];	
+			
+		const CLASS = {
+			'LABEL': 'choice-question-input-container',
+			'ICON': ' fas fa-check fa-lg choice-question-input-container__check-icon',
+			'S_LABEL': 'choice-question-input-container--selected',
+			'S_ICON': 'choice-question-input-container__check-icon--selected'
+		}
+// 		blockNext(true);
+		
+		
+		//클릭 시 라벨의 배경색 변경 & check-icon
+		//다음 섹션으로 이동(fnMove메소드)
+		function checkedIcon(element, questionId){
+			var index = {
+				'#lbl': CLASS.LABEL,
+				'#span': CLASS.ICON
+			}
+			for(var q in index) {
+				for(var e of document.querySelectorAll(q+questionId)) {
+					e.className = index[q];
+				}
+			}
+			element.classList.add(CLASS.S_LABEL);//라벨의 배경색 변경
+			element.getElementsByClassName('choice-question-input-container__check-icon')[0].classList.add(CLASS.S_ICON);
+// 			console.log("선택값은 "+element.getElementsByClassName('choice-question-input-container__label')[0].textContent);
+			fnMove(ORDER[ORDER.indexOf(questionId)+1]);
+		}
+		
+		function checkedIcon1(element, questionId,selected){
+			var index = {
+				'#lbl': CLASS.LABEL,
+				'#span': CLASS.ICON
+			}
+			for(var q in index) {
+				for(var e of document.querySelectorAll(q+questionId)) {
+					e.className = index[q];
+				}
+			}
+			element.classList.add(CLASS.S_LABEL);//라벨의 배경색 변경
+			element.getElementsByClassName('choice-question-input-container__check-icon')[0].classList.add(CLASS.S_ICON);
+			//숨겼다가, 선택된 것만 보이게 하기.
+			$('#divAvgSmoke').hide();
+			$('#divSmokingPast').hide();
+			$('#divSmokingPastDaily').hide();
+			$('#div'+selected).show();
+			fnMove(selected);
+		}
+		$('#divAvgSmoke').hide();
+		$('#divSmokingPast').hide();
+		$('#divSmokingPastDaily').hide();
+		
+		// 다음 섹션으로 위치 이동 
+		// 라디오 버튼의 경우 -> 선택 하면 넘어가야함 / 입력창의 경우 -> 입력 후, 엔터 혹은 클릭하면 다음 섹션으로 간다
+		function fnMove(seq){
+	        var offset = $("#div" + seq).offset();//document안에 다음 섹션의 위치값을 반환
+	        $('html, body').animate({scrollTop : offset.top}, 400);
+	    }
+		
+		
+		//입력값을 실시간으로 감지하여 에러메세지를 띄워야 함 
+		// 입력값이 기준치에 도달하지 않으면 넘어갈 수 없도록 막아야함. 
+		$('#inputAge').keyup(function() {
+			var age =$(this).val();
+			$(this).val(age.replace(/[^0-9]/));
+			$('#ageErrorText').text('');
+			if(age>100){
+				$('#ageErrorText').text('100살까지만 가능합니다.');
+				$('#ageErrorText').css('color','#f95959');
+			}else if (age<55){
+				$('#ageErrorText').text('55살 이상만 입력 가능합니다.');
+				$('#ageErrorText').css('color','#f95959');
+			}
+		});
+		//엔터키 인식해서 함수 실행하기...
+		$('#divAge').keypress(function(e){
+			if(e.keyCode===13){
+				checkedAge();
+			}
+		});
+		
+		$('#inputDrink').keyup(function() {
+			var drink =$(this).val();
+			$(this).val(drink.replace(/[^0-9]/));
+			$('#drinkErrorText').text('');
+			if(drink>50){
+				$('#drinkErrorText').text('50까지만 입력 가능.');
+				$('#drinkErrorText').css('color','#f95959');
+			}
+		});
+		
+		
+		function valCheck(valId,errTxt){
+// 			$('#'+valId).keyup(function() {
+// 				var age =$(this).val();
+// 				$(this).val(age.replace(/[^0-9]/));
+// 				$('#'+ errTxt).text('');
+// 				if(age>100){
+// 					$('#ageErrorText').text('100살까지만 가능합니다.');
+// 					$('#ageErrorText').css('color','#f95959');
+// 				}else if (age<55){
+// 					$('#ageErrorText').text('55살 이상만 입력 가능합니다.');
+// 					$('#ageErrorText').css('color','#f95959');
+// 				}
+				
+// 				$('#ageErrorText').text('');
+// 				if(age>100){
+// 					$('#ageErrorText').text('100살까지만 가능합니다.');
+// 					$('#ageErrorText').css('color','#f95959');
+// 				}else if (age<55){
+// 					$('#ageErrorText').text('55살 이상만 입력 가능합니다.');
+// 					$('#ageErrorText').css('color','#f95959');
+// 				}
+// 			});
+			
+		}
+		
+		
+		
+		//입력값 체크해서 넘어갈 수 있도록 하기. 
+		function checkedAge(){
+			if($('#inputAge').val()>100 || $('#inputAge').val()<55){
+				$('#inputAge').focus();
+				blockNext(true);
+			}else{
+				if($('#spanSex').hasClass(CLASS.S_ICON)){
+					console.log('체크했음');
+					blockNext(false);
+					fnMove('Smoking');
+				}
+			}
+			
+		}
+		//위 두 질문을 체크하지 않았을 때는 아래 영역을 보여주지 않음. 
+		//위 두 질문을 체크했고, 그 값이 유효할 때 다음 페이지로 넘어간다
+		//라디오버튼, 입력값 (유효한지 아닌지)를 체크해야 한다. 
+		function blockNext(yesNo){
+			if(yesNo){
+				$('#healthBehaviours').hide();
+			}else{
+				$('#healthBehaviours').show();
+			}
+		}
+	
+	</script>
+</div>
+</html>

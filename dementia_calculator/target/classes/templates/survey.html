@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>copy project</title>
-<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-<link href="/css/projectMain.css" rel="stylesheet" type="text/css">
-<!-- 폰트 및 크기 조절 css -->
-<link href="/css/main.css" rel="stylesheet" type="text/css">
-<!--  메인 질문박스 등  css -->
-<link href="/css/projectMain.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/all.min.css" integrity="sha512-6c4nX2tn5KbzeBJo9Ywpa0Gkt+mzCzJBrE1RB6fmpcsoN+b/w/euwIMuQKNyUoU/nToKN3a8SgNOtPrbW12fug==" crossorigin="anonymous" />
+	<meta charset="UTF-8">
+	<title>copy project</title>
+	<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+	
+	<!-- 폰트 및 크기 조절 css -->
+	<link href="/css/main.css" rel="stylesheet" type="text/css">
+	<!-- 메인 질문박스 등 css -->
+	<link href="/css/projectMain.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/all.min.css" integrity="sha512-6c4nX2tn5KbzeBJo9Ywpa0Gkt+mzCzJBrE1RB6fmpcsoN+b/w/euwIMuQKNyUoU/nToKN3a8SgNOtPrbW12fug==" crossorigin="anonymous" />
 </head>
 <body class="pbl-body white-body">
-	<!-- 윗 부분   -->
+	<!-- 윗 부분 -->
 	<div data-collapse="small" data-animation="default" data-duration="400"
 		data-easing="ease" data-easing2="ease" role="banner"
 		class="navbar calculator w-nav" style="display: block; opacity: 1;">
@@ -50,23 +50,21 @@
 									<!-- 선택지  -->
 									<div class="radio-question-answer-wrapper">
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container" id="maleLabel" onclick="checkedIcon(this,'1')">
+											<label class="choice-question-input-container" id="lblSex" onclick="checkedIcon1(this, 'Sex');">
 												<div class="keypress-label">A</div> 
-												<input type="radio" class="radio-answer-option__input" name="sex" > 
 												<span class="choice-question-input-container__label">Male</span>
 												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" id="spanSex" aria-hidden="true">check</span>
 												</div>
 											</label>
 										</div>
 
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container" id="femaleLabel" onclick="checkedIcon(this,'1')">
+											<label class="choice-question-input-container" id="lblSex" onclick="checkedIcon1(this, 'Sex');">
 												<div class="keypress-label">B</div> 
-												<input type="radio" class="radio-answer-option__input" name="sex"> 
 												<span class="choice-question-input-container__label">Female</span>
 												<div class="choice-question-input-container__check-icon-container">
-													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" aria-hidden="true">check</span>
+													<span class="material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon" id="spanSex" aria-hidden="true">check</span>
 												</div>
 											</label>
 										</div>
@@ -86,7 +84,7 @@
 									<div>
 										<div class="jss27 survey-input">
 											<div class="jss44 jss31 jss35 survey-input__input-underline jss53 jss38 jss45 jss32">
-												<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" id="inputAge" >
+												<input aria-invalid="false" class="jss54 jss39 survey-input__input jss57 jss42" type="number" id="inputAge">
 											</div>
 											<div class="survey-input__suffix-text">years old</div>
 											<p class="jss61" id="ageErrorText"></p>
@@ -244,15 +242,13 @@
 					</div>
 				</div>
 
-
-
 				<!-- [Sociodemographic] 섹션 -->
 				<div id="G2" class="group">
 					<div class="group-header">
 						<div class="group-name">SOCIODEMOGRAPHIC</div>
 					</div>
 					<div>
-						<div class="question-wrapper">
+						<div class="question-wrapper" id="div6">
 							<div tabindex="-1">
 								<div id="edu" class="question radio-question" tabindex="-1">
 									<div class="question-and-tooltip-container">
@@ -260,7 +256,7 @@
 									</div>
 									<div class="radio-question-answer-wrapper">
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
+											<label class="choice-question-input-container" onclick="checkedIcon(this,'6')">
 												<div class="keypress-label">A</div>
 												<input type="radio" class="radio-answer-option__input">
 												<span class="choice-question-input-container__label">Less than high school</span>
@@ -270,7 +266,7 @@
 											</label>
 										</div>
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
+											<label class="choice-question-input-container" onclick="checkedIcon(this,'6')">
 												<div class="keypress-label">B</div>
 												<input type="radio" class="radio-answer-option__input">
 												<span class="choice-question-input-container__label">High school graduate</span>
@@ -280,7 +276,7 @@
 											</label>
 										</div>
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
+											<label class="choice-question-input-container" onclick="checkedIcon(this,'6')">
 												<div class="keypress-label">C</div> 
 												<input type="radio" class="radio-answer-option__input">
 												<span class="choice-question-input-container__label">Some post-secondary education</span>
@@ -290,7 +286,7 @@
 											</label>
 										</div>
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
+											<label class="choice-question-input-container" onclick="checkedIcon(this,'6')">
 												<div class="keypress-label">D</div>
 												<input type="radio" class="radio-answer-option__input">
 												<span class="choice-question-input-container__label">Post-secondary graduate</span>
@@ -306,7 +302,7 @@
 					</div>
 					
 					<div>
-						<div class="question-wrapper">
+						<div class="question-wrapper" id="div7">
 							<div tabindex="-1">
 								<div id="eth" class="question radio-question" tabindex="-1">
 									<div class="question-and-tooltip-container">
@@ -314,7 +310,7 @@
 									</div>
 									<div class="radio-question-answer-wrapper">
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
+											<label class="choice-question-input-container" onclick="checkedIcon(this,'7')">
 												<div class="keypress-label">A</div>
 												<input type="radio" class="radio-answer-option__input">
 												<span class="choice-question-input-container__label">White</span>
@@ -324,7 +320,7 @@
 											</label>
 										</div>
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
+											<label class="choice-question-input-container" onclick="checkedIcon(this,'7')">
 												<div class="keypress-label">B</div>
 												<input type="radio" class="radio-answer-option__input">
 												<span class="choice-question-input-container__label">South Asian, West Asian or Arab</span>
@@ -334,7 +330,7 @@
 											</label>
 										</div>
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
+											<label class="choice-question-input-container" onclick="checkedIcon(this,'7')">
 											<div class="keypress-label">C</div>
 												<input type="radio" class="radio-answer-option__input">
 												<span class="choice-question-input-container__label">South East Asian, Chinese, Japanese, Korean or Filipino</span>
@@ -344,7 +340,7 @@
 											</label>
 										</div>
 										<div class="radio-answer-question">
-											<label class="choice-question-input-container">
+											<label class="choice-question-input-container" onclick="checkedIcon(this,'7')">
 												<div class="keypress-label">D</div>
 												<input type="radio" class="radio-answer-option__input">
 												<span class="choice-question-input-container__label">Other or multiple origin</span>
@@ -366,7 +362,7 @@
 						<div class="group-name">GENERAL HEALTH</div>
 					</div>
 					<div>
-						<div class="question-wrapper">
+						<div class="question-wrapper" id="">
 							<div tabindex="-1">
 								<div id="lbs_kgs" class="question connected-question" tabindex="-1">
 									<div class="question-and-tooltip-container">
@@ -449,43 +445,37 @@
 
 				
 				</div>
-								
 				
 				<!-- 밑에 설문현황 보여주는 막대기 같은거 나옴 -->
 				<div class="results" tabindex="-1"></div>
+				
 				<div class="survey-footer no-print">
 					<div class="flex-container">
 						<div id="left-container" class="left-container">
 							<div class="survey-progress-bar">
 								<div class="groups">
-									<div class="survey-progress-bar__group-container">
+									<div class="survey-progress-bar__group-container" id="G0bar">
 										<div class="survey-progress-bar__group-name">About You</div>
 										<div class="survey-progress-bar__group-progress-bar">
-											<div class="survey-progress-bar__group-progress-bar-progress"
-												style="width: 0%;"></div>
+											<div class="survey-progress-bar__group-progress-bar-progress" style="width: 0%;"></div>
 										</div>
 									</div>
-									<div class="survey-progress-bar__group-container">
-										<div class="survey-progress-bar__group-name">Health
-											Behaviours</div>
+									<div class="survey-progress-bar__group-container" id="G1bar">
+										<div class="survey-progress-bar__group-name">Health Behaviours</div>
 										<div class="survey-progress-bar__group-progress-bar">
-											<div class="survey-progress-bar__group-progress-bar-progress"
-												style="width: 0%;"></div>
+											<div class="survey-progress-bar__group-progress-bar-progress" style="width: 0%;"></div>
 										</div>
 									</div>
-									<div class="survey-progress-bar__group-container">
+									<div class="survey-progress-bar__group-container" id="G2bar">
 										<div class="survey-progress-bar__group-name">Sociodemographic</div>
 										<div class="survey-progress-bar__group-progress-bar">
-											<div class="survey-progress-bar__group-progress-bar-progress"
-												style="width: 0%;"></div>
+											<div class="survey-progress-bar__group-progress-bar-progress" style="width: 0%;"></div>
 										</div>
 									</div>
-									<div class="survey-progress-bar__group-container">
-										<div class="survey-progress-bar__group-name">General
-											Health</div>
+									<div class="survey-progress-bar__group-container" id="G3bar">
+										<div class="survey-progress-bar__group-name">General Health</div>
 										<div class="survey-progress-bar__group-progress-bar">
-											<div class="survey-progress-bar__group-progress-bar-progress"
-												style="width: 0%;"></div>
+											<div class="survey-progress-bar__group-progress-bar-progress" style="width: 0%;"></div>
 										</div>
 									</div>
 								</div>
@@ -493,8 +483,7 @@
 									<div class="survey-progress-bar__group-container">
 										<div class="survey-progress-bar__group-name">Progress</div>
 										<div class="survey-progress-bar__group-progress-bar">
-											<div class="survey-progress-bar__group-progress-bar-progress"
-												style="width: 0%;"></div>
+											<div class="survey-progress-bar__group-progress-bar-progress" style="width: 0%;"></div>
 										</div>
 									</div>
 								</div>
@@ -517,7 +506,6 @@
 			class="calculator-landing-begin-button demport-calculate w-button disabled"
 			onclick="aboutYouResult()">Calculate</a>
 	</div>
-
 
 	<!-- 질문 끝나고 다른 설문 할 지 보여주는 그 부분 -->
 	<div id="survey-end" class="pbl-footer demport-lav wf-section">
@@ -630,15 +618,15 @@
 		</div>
 	</div>
 	
-	
 	<div class="landscape-cover wf-section">
 		<h4 class="heading-16">Please rotate your device to landscape.</h4>
 		<div class="text-block-73">(For desktop users, widen your window
 			to at least 768px.)</div>
 	</div>
-
 </body>
-<script>
+<script type="text/javascript">
+	blockNext(true);
+	
 	//스크롤 인식 활성화
 	(function cssFocus(){
 		const options = {
@@ -668,38 +656,86 @@
         var offset = $("#div" + num).offset();//document안에 다음 섹션의 위치값을 반환
         $('html, body').animate({scrollTop : offset.top}, 400);
     }
-		
+	
+	const CLASS = {
+		'LABEL': 'choice-question-input-container',
+		'ICON': 'material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon',
+		'S_LABEL': 'choice-question-input-container--selected',
+		'S_ICON': 'choice-question-input-container__check-icon--selected'
+	}
+	const ORDER = ['Sex', 'Age'];
+	
 	//클릭 시 라벨의 배경색 변경 & check-icon
 	//다음 섹션으로 이동(fnMove메소드)
-	function checkedIcon(element,number){ 
-		for(let i=0; i<$("#div"+number).find('.radio-answer-question').length; i++){
-			$("#div"+number).find('.radio-answer-question').find('label')[i].className='choice-question-input-container';
-			$("#div"+number).find('.radio-answer-question').find('label').find('.material-icons')[i].className='material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon';
+	function checkedIcon1(element, number){
+		console.log(1);
+		var index = {
+			'#lbl': CLASS.LABEL,
+			'#span': CLASS.ICON
 		}
-		element.classList.add('choice-question-input-container--selected');//라벨의 배경색 변경
-		element.getElementsByClassName('material-icons')[0].classList.add('choice-question-input-container__check-icon--selected');
-		fnMove(number);
+		for(var q in index) {
+			for(var e of document.querySelectorAll(q+number)) {
+				e.className = index[q];
+			}
+		}
+		element.classList.add(CLASS.S_LABEL);//라벨의 배경색 변경
+		element.getElementsByClassName('material-icons')[0].classList.add(CLASS.S_ICON);
+		
+		
+// 		for(var e of $("#div"+number).find('.radio-answer-question')) {
+// 			console.log(e);
+// 		}
+		
+		
+// 		for(let i=0; i<$("#div"+number).find('.radio-answer-question').length; i++){
+// 			$("#div"+number).find('.radio-answer-question').find('label')[i].className = CLASS.LABEL;
+// 			$("#div"+number).find('.radio-answer-question').find('label').find('.material-icons')[i].className = CLASS.ICON;
+// 		}
+// 		fnMove(number);
 	}
+	
+	
+	
+// 	function checkedIcon(element,number){
+// 		event.preventDefault();
+// 		for(let i=0; i<$("#div"+number).find('.radio-answer-question').length; i++){
+// 			$("#div"+number).find('.radio-answer-question').find('label')[i].className='choice-question-input-container';
+// 			$("#div"+number).find('.radio-answer-question').find('label').find('.material-icons')[i].className='material-icons jss18 fas fa-check fa-lg choice-question-input-container__check-icon';
+// 		}
+// 		element.classList.add('choice-question-input-container--selected');//라벨의 배경색 변경
+// 		element.getElementsByClassName('material-icons')[0].classList.add('choice-question-input-container__check-icon--selected');
+// 		fnMove(number);
+// 	}
 	
 	//입력값을 실시간으로 감지하여 에러메세지를 띄워야 함 
 	// 입력값이 기준치에 도달하지 않으면 넘어갈 수 없도록 막아야함. 
-	$('#inputAge').keyup(function(){
+	$('#inputAge').keyup(function() {
 		var age =$(this).val();
 		$(this).val(age.replace(/[^0-9]/));
 		$('#ageErrorText').text('');
 		if(age>100){
 			$('#ageErrorText').text('100살까지만 가능합니다.');
+			$('#ageErrorText').css('color','#f95959');
 		}else if (age<55){
 			$('#ageErrorText').text('55살 이상만 입력 가능합니다.');
+			$('#ageErrorText').css('color','#f95959');
 		}
 	});
 	//입력값 체크해서 넘어갈 수 있도록 하기. 
 	function checkedAge(){
+		console.log('dd');
 		if($('#inputAge').val()>100 || $('#inputAge').val()<55){
 			$('#inputAge').focus();
+			blockNext(true);
 		}else{
-			fnMove(2);
+			//1번의 라디오버튼을 체크했는지 확인하고 보내야함. 
+			if($('input:radio[name=sex]').is(":checked")){
+				blockNext(false);
+				fnMove(2);
+				progress();
+			}
 		}
+		
 	}
 	
 	//엔터키 인식해서 함수 실행하기...
@@ -709,14 +745,37 @@
 		}
 	});
 	
+	//위 두 질문을 체크하지 않았을 때는 아래 영역을 보여주지 않음. 
+	//위 두 질문을 체크했고, 그 값이 유효할 때 다음 페이지로 넘어간다
+	//라디오버튼, 입력값 (유효한지 아닌지)를 체크해야 한다. 
+	function blockNext(yesNo){
+		if(yesNo){
+			$('#G1').hide();
+			$('#G2').hide();
+			$('#G3').hide();
+		}else{
+			$('#G1').show();
+			$('#G2').show();
+			$('#G3').show();
+		}
+	}
 	
 	
-	
-  
+// 	var checked = $('input:radio[name=sex]').is(":checked");
+// 	console.log(checked);
 
- 
-	
-	
+	//설문 현황을 섹션별로 파악하여 밑에 바에 표시하기
+	//survey-progress-bar__group-progress-bar-progress 의 style=width: % 를 진행현황을 파악하여 바꿔주는 방식인 듯...?
+	var count = 0;
+  	function progress(){
+  		
+  		console.log('실행됨');
+		count += 1;
+		let percent= (count/$('#G0').find('.question-wrapper').length)*100;
+		if(percent<=100){
+		  	$('#G0bar').find('.survey-progress-bar__group-progress-bar-progress').attr('style','width: '+ percent + '%');
+		}
+	}
 </script>
 </html>
 

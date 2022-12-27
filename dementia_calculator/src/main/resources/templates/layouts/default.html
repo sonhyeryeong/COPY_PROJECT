@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="httpl://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta charset="UTF-8">
+	<link href="/css/test.css" rel="stylesheet" type="text/css">
+	<!-- fontawesome -->
+	<link href="/css/all.css" rel="stylesheet">
+	<link href="/css/fontawesome.css" rel="stylesheet">
+	
+	<title>COPY_PROJECT</title>
+	
+	<script src="/js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<!-- Topbar :헤드 -->
+	<nav th:replace="~{fragments/topbar :: topbarFragment}"></nav>
+	<!-- Main Content -->
+	<!-- body : 변경되는 것 -->
+	<div layout:fragment="content"></div>
+	<!-- footer -->
+	<footer th:replace="~{fragments/footer :: footerFragment}"></footer>
+</body>
+</html>
