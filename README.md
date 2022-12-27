@@ -1,2 +1,3 @@
 # COPY_PROJECT
-dementia_calculator copy
+##dementia_calculator copy
+- templates : thymeleaf(layouts) 
