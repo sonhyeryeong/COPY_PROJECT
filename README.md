@@ -1,4 +1,4 @@
 # COPY_PROJECT
-## dementia_calculator copy
-- templates : thymeleaf(layouts) 
-
+## dementia_calculator copy 
+Spring Boot
+- templates : thymeleaf(layouts)
